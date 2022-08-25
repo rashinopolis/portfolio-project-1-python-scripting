@@ -75,7 +75,7 @@ class Converter:
         return ' / '.join(converted) if to_morse else ''.join(converted)
 
 
-def get_choice():
+def get_choice() -> str:
     """Get user choice for choosing to convert to or from morse."""
     print("1. Translate to morse code")
     print("2. Translate from morse code")
