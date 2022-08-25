@@ -2,7 +2,7 @@ import json
 
 class Converter:
     """
-    Converts text/numbers to or from morse code.
+    Converts text_string/numbers to or from morse code.
 
     Examples:
         Converting from morse code
@@ -69,13 +69,13 @@ class Converter:
                 # A non-morse character was given
                 return f"\nInvalid morse code letter: {string}\n"
 
-    def convert(self, text_list, to_morse: bool = True) -> str:
-        """Iterates through `text_list` converting all values to or from morse."""
-        converted = [self._convert(item, to_morse) for item in text_list.split()]
+    def convert(self, text_string: str, to_morse: bool = True) -> str:
+        """Iterates through `text_string` converting all values to or from morse."""
+        converted = [self._convert(item, to_morse) for item in text_string.split()]
         return ' / '.join(converted) if to_morse else ''.join(converted)
 
 
-def get_choice():
+def get_choice() -> str:
     """Get user choice for choosing to convert to or from morse."""
     print("1. Translate to morse code")
     print("2. Translate from morse code")
@@ -88,9 +88,9 @@ def get_choice():
 
 if __name__ == "__main__":
     converter = Converter()
-    # Get user choice for conversion, and then text to convert
+    # Get user choice for conversion, and then text_string to convert
     choice = get_choice()
-    text = input("Enter text: ")
+    text = input("Enter text_string: ")
 
     if choice == "1":
         # Converting to morse
